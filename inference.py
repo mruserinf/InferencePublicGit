@@ -2,6 +2,12 @@ print("Public repo clonned Successfully")
 
 import sys
 import os
+from os import path
+for i in range(len(sys.argv)):
+  print(sys.argv[i])
+
+print(os.getenv('test'))
+print(os.getenv('test1'))
 print(os.getenv('test'))
 print(os.getenv('test1'))
 
