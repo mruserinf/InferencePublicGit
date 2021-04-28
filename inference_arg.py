@@ -1,7 +1,7 @@
 print("Public repo clonned Successfully")
 
 import sys
-import os,os.path
+import os
 from os import path
 for i in range(len(sys.argv)):
   print(sys.argv[i])
