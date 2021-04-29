@@ -6,8 +6,8 @@ from os import path
 for i in range(len(sys.argv)):
   print(sys.argv[i])
 
-print(os.getenv('test'))
-print(os.getenv('test1'))
+print(os.getenv('env1'))
+print(os.getenv('env2'))
 
 print('DATA_PATH',os.getenv('DATA_PATH')) 
 file1= os.path.join(os.getenv('DATA_PATH'),'input.csv')
