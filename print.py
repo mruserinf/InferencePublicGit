@@ -1,3 +1,5 @@
+print("Public Repo cloned successfully")
+   
 import sys
 import os
 print(sys.argv[1])
