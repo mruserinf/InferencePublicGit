@@ -9,10 +9,6 @@ for i in range(len(sys.argv)):
 print(os.getenv('env1'))
 print(os.getenv('env2'))
 
-print('DATA_PATH',os.getenv('DATA_PATH')) 
-file1= os.path.join(os.getenv('DATA_PATH'),'input.csv')
-print ("Is data file exists? " + str(path.isfile(file1)))
-
 print('MODEL_PATH',os.getenv('MODEL_PATH'))
 file2= os.path.join(os.getenv('MODEL_PATH'),'DRS_Model.pl')
 print ("Is model file exists? " + str(path.isfile(file2)))
