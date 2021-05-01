@@ -11,6 +11,6 @@ print(os.getenv('test1'))
 print('OUTPUT_PATH',os.getenv('OUTPUT_PATH'))
 print('CODE_PATH',os.getenv('CODE_PATH'))
 
-f= open(os.getenv('OUTPUT_PATH') + "/output.csv","w+")
+f= open(os.getenv('OUTPUT_PATH') + "/output_729082.csv","w+")
 f.write("1,2,3,4")
 f.close()
