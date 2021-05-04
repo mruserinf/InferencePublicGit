@@ -3,7 +3,7 @@ import sys
 import os
 os.system("nvidia-smi")
 os.system("nvcc --version")
-subprocess.check_call([sys.executable, "-m", "pip", "install", "PyTorch"])
+subprocess.check_call([sys.executable, "-m", "pip", "install", "pytorch"])
 
 import pytorch
 #import tensorflow as tf
