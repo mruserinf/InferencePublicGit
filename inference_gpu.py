@@ -3,7 +3,7 @@ import sys
 import os
 os.system("nvidia-smi")
 os.system("nvcc --version")
-subprocess.check_call([sys.executable, "-m", "pip", "install", "tensorflow==2.2.0"])
+subprocess.check_call([sys.executable, "-m", "pip", "install", "tensorflow-gpu=2.0.0"])
 
 import tensorflow as tf
 if tf.test.gpu_device_name():
