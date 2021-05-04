@@ -3,9 +3,9 @@ import sys
 import os
 os.system("nvidia-smi")
 os.system("nvcc --version")
-subprocess.check_call([sys.executable, "-m", "pip", "install", "pytorch"])
+subprocess.check_call([sys.executable, "-m", "pip", "install", "torch"])
 
-import pytorch
+import torch
 #import tensorflow as tf
 #if tf.test.gpu_device_name():
  #   print('Default GPU Device: {}'.format(tf.test.gpu_device_name()))
