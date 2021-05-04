@@ -1,1 +1,1 @@
-print("Public repo clonned Successfully")
+print("Public-repo clonned Successfully")
