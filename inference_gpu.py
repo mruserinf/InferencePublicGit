@@ -35,6 +35,14 @@ class M(nn.Module):
 model = M()   # not on cuda
 model.to(dev) # is on cuda (all parameters)
 print(next(model.parameters()).is_cuda) # True
+
+f= open(os.getenv('OUTPUT_PATH') + "/output.csv","w+")
+f.write("1,2,3,4")
+f.close()
+
+file3= os.path.join(os.getenv('OUTPUT_PATH'),'output.csv')
+print ("Is output file exists? " + str(path.isfile(file3)))
+
 #import tensorflow as tf
 #if tf.test.gpu_device_name():
  #   print('Default GPU Device: {}'.format(tf.test.gpu_device_name()))
