@@ -1,6 +1,6 @@
 import sys
 import os
-print("Commit1")
+print("Commit2")
 print(sys.argv[1])
 print(sys.argv[2])
 print(sys.argv[3])
