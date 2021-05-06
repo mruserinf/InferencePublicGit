@@ -5,10 +5,10 @@ import sys
 import os
 from os import path
 for i in range(len(sys.argv)):
-  print(sys.argv[i])
+  print("arg: " ,sys.argv[i])
 
-print(os.getenv('test'))
-print(os.getenv('test1'))
+print("env1: ", os.getenv('env1'))
+print("env2: ", os.getenv('env2'))
 
 print('DATA_PATH',os.getenv('DATA_PATH')) 
 file1= os.path.join(os.getenv('DATA_PATH'),'input.csv')
