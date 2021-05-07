@@ -11,7 +11,7 @@ while i < seconds:
   a.append(now.strftime("%Y-%m-%d %H:%M:%S"))
   time.sleep(1)
   print(now.strftime("%Y-%m-%d %H:%M:%S"))
-  chars = ''.join([random.choice(string.ascii_letters + string.digits) for i in range(9999999999999999999999999999999999999999999999999990)])  # 1
+  chars = ''.join([random.choice(string.ascii_letters + string.digits) for i in range(9999999)])  # 1
   print(chars)
   i += 1
 
