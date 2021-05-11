@@ -1,6 +1,7 @@
 import subprocess
 import sys
 import os
+from os import path
 os.system("nvidia-smi")
 os.system("nvcc --version")
 subprocess.check_call([sys.executable, "-m", "pip", "install", "torch"])
