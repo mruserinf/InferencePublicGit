@@ -44,7 +44,6 @@ f.close()
 file3= os.path.join(os.getenv('OUTPUT_PATH'),'output.csv')
 print ("Is output file exists? " + str(path.isfile(file3)))
 print ("output saved in " + os.getenv('OUTPUT_PATH'))
-
 #import tensorflow as tf
 #if tf.test.gpu_device_name():
  #   print('Default GPU Device: {}'.format(tf.test.gpu_device_name()))
