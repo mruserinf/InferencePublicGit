@@ -38,9 +38,10 @@ model.to(dev) # is on cuda (all parameters)
 print(next(model.parameters()).is_cuda) # True
 
 print(os.getenv('OUTPUT_PATH'))
-f= open(os.getenv('OUTPUT_PATH') + "/output.csv","w+")
-f.write("1,2,3,4")
-f.close()
+if(next(model.parameters()).is_cuda):
+    f= open(os.getenv('OUTPUT_PATH') + "/output.csv","w+")
+    f.write("1,2,3,4")
+    f.close()
 file3= os.path.join(os.getenv('OUTPUT_PATH'),'output.csv')
 print ("Is output file exists? " + str(path.isfile(file3)))
 print ("output saved in " + os.getenv('OUTPUT_PATH'))
