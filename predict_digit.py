@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# coding: utf-8
+
 # 1. Install Dependencies
 import subprocess
 import sys
@@ -7,47 +10,50 @@ def install(package):
 
 install("keras")
 install("tensorflow")
-install("Pillow")
 
-import numpy as np
-from PIL import Image
-from keras.models import load_model
-import boto3
+import os
+import pandas as pd
 import pickle
 import argparse
-import os 
+import json
+import base64
+import numpy as np
+import io
+import scipy
+import imageio
+from keras.models import load_model
+from keras.datasets import mnist
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import Dropout
+from keras.utils import np_utils
 
-class Score:
-    """
-    A sample Digit Recognizer Model handler implementation.
-    """
-    # Function to get prediction
+import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
+  
+# Read input image
+input_file = os.path.join(os.environ['DATA_PATH'], 'four.jpg') if os.getenv('DATA_PATH') else "Digits/four.jpg"
+print ("input file path - ", input_file)
+img = mpimg.imread(input_file)
+  
+# print Image locally
+plt.imshow(img)
+data = img
 
-    def predict(self, input):
+# load the model from disk
+model_file = os.path.join(os.environ['MODEL_PATH'], 'kerasDigitRecognizer.h5') 
+print ("Model file path - ", model_file)
+model = load_model(model_file)
 
-        # Predict & Return
-        return self.digit_model.predict_proba(input)[0, 1]
+testInput = np.array(data, dtype=np.float32)
+nrPixels = testInput.shape[0] * testInput.shape[1] # 28 * 28 = 784 pixels
+testInput_processed = testInput.reshape(1, nrPixels).astype('float32')
 
-    # Function to get the model
-    def load(self):
+pred = model.predict(testInput_processed)
+print ("Predicted image is ", pred.argmax())
+result = { "prediction" : str(pred.argmax()) }
 
-        model_path = load_model(os.path.join(os.environ['MODEL_PATH'], 'kerasDigitRecognizer.h5')) 
-        model_path.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-        print("Loaded model from sagemaker")
-
-        self.digit_model = model_path
-        return True
-
-if __name__ == "__main__":
-    score = Score()
-    score.load()
-    img = np.array(Image.open(os.path.join(os.environ['DATA_PATH'], 'four.jpg')))
-    img = img.reshape(-1, 28*28)
-    # Preprocess - Normalization
-    testInput_processed = img/ 255
-
-    with open(os.path.join(os.environ['OUTPUT_PATH'], 'output.txt'), 'w') as output_fd:
-        prediction = score.predict(testInput_processed)
-        final_prediction = print ("Prediction for the input image is {}".format(prediction.argmax()))
-        output_fd.write(str(final_prediction))
-        output_fd.write('\n')
+if os.getenv('OUTPUT_PATH'):
+    output_file=os.path.join(os.environ['OUTPUT_PATH'], 'result.json')
+    with open (output_file, 'w') as result_file:
+        json.dump(result, result_file)
