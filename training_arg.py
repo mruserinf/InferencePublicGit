@@ -10,7 +10,10 @@ for i in range(len(sys.argv)):
 print("env1: ", os.getenv('env1'))
 print("env2: ", os.getenv('env2'))
 print("INPUT_PATH: ", os.getenv('INPUT_PATH'))
+print("INPUT: ", os.getenv('INPUT'))
+print("DATA_PATH: ", os.getenv('DATA_PATH'))
 print("OUTPUT_PATH: ", os.getenv('OUTPUT_PATH'))
+print("OUTPUT: ", os.getenv('OUTPUT'))
 
 print('INPUT_PATH',os.getenv('INPUT_PATH')) 
 file1= os.path.join(os.getenv('INPUT_PATH'),'input.csv')
