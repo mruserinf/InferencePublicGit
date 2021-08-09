@@ -7,6 +7,8 @@ from os import path
 for i in range(len(sys.argv)):
   print("arg: " ,sys.argv[i])
 
+print("env1: ", os.getenv('env1'))
+print("env2: ", os.getenv('env2'))
 print("INPUT_PATH: ", os.getenv('INPUT_PATH'))
 print("OUTPUT_PATH: ", os.getenv('OUTPUT_PATH'))
 
