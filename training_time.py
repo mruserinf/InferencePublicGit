@@ -15,6 +15,8 @@ while i < seconds:
   chars = ''.join([random.choice(string.ascii_letters + string.digits) for i in range(99)])  # 1
   print(chars)
   i += 1
+  
+
 
 if __name__ == "__main__":
 
@@ -22,3 +24,6 @@ if __name__ == "__main__":
      #       output_fd.write(str(a))
       #      output_fd.write('\n')
     print(a)
+    f= open(os.getenv('MODEL_PATH') + "/model.pl","w+")
+    f.write("sampleline")
+    f.close()
