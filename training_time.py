@@ -24,6 +24,6 @@ if __name__ == "__main__":
      #       output_fd.write(str(a))
       #      output_fd.write('\n')
     print(a)
-    f= open(os.getenv('MODEL_PATH') + "/model.pl","w+")
+    f= open(os.getenv('MODEL_PATH') + "/DRS_Model.pl","w+")
     f.write("sampleline")
     f.close()
