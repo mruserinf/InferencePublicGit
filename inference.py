@@ -5,6 +5,7 @@ import string
 print("Public repo with branch Test_Inference_EKS clonned Successfully")
 print ("Current date and time : ")
 a=[]
+print(sys.argv[1])
 seconds=int(sys.argv[1])
 i = 1
 while i < seconds:
